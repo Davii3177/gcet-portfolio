@@ -1,10 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector(".site-header");
-  const onScroll = () => {
-    header.classList.toggle("is-scrolled", window.scrollY > 8);
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    const labelFor = (theme) =>
+      theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+
+    themeToggle.setAttribute(
+      "aria-label",
+      labelFor(document.documentElement.getAttribute("data-theme"))
+    );
+
+    themeToggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      themeToggle.setAttribute("aria-label", labelFor(next));
+      try {
+        localStorage.setItem("theme", next);
+      } catch (e) {}
+    });
+  }
 
   if (!("IntersectionObserver" in window)) {
     return;
