@@ -363,7 +363,7 @@ a:hover {
   width: min(46vw, 460px);
   height: auto;
   transform: translate(-50%, -50%);
-  opacity: 0.35;
+  opacity: 0.22;
   mix-blend-mode: multiply;
   clip-path: circle(50%);
   pointer-events: none;
@@ -389,6 +389,7 @@ a:hover {
   color: var(--color-primary);
   margin: 0 0 16px;
   animation: fadeInUp 0.7s ease both;
+  text-shadow: 0 0 16px var(--color-bg), 0 0 8px var(--color-bg);
 }
 
 .hero h1 {
@@ -396,6 +397,7 @@ a:hover {
   margin: 0 0 20px;
   animation: fadeInUp 0.7s ease both;
   animation-delay: 0.1s;
+  text-shadow: 0 0 24px var(--color-bg), 0 0 12px var(--color-bg), 0 0 6px var(--color-bg);
 }
 
 .hero-subtitle {
@@ -405,6 +407,7 @@ a:hover {
   margin: 0 auto 40px;
   animation: fadeInUp 0.7s ease both;
   animation-delay: 0.2s;
+  text-shadow: 0 0 16px var(--color-bg), 0 0 8px var(--color-bg);
 }
 
 .hero-cta {
