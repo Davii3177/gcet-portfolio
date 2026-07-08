@@ -151,12 +151,27 @@ a:hover {
 }
 
 .nav-links a {
+  position: relative;
   display: block;
+  overflow: hidden;
   color: var(--color-text-muted);
   font-weight: 500;
-  padding: 10px 12px;
+  padding: 10px 12px 10px 20px;
   border-radius: 8px;
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--color-primary);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.25s ease;
 }
 
 .nav-links a:hover {
@@ -164,6 +179,10 @@ a:hover {
   color: var(--color-text);
   background-color: var(--color-bg-alt);
   transform: translateX(2px);
+}
+
+.nav-links a:hover::before {
+  transform: scaleY(1);
 }
 
 .content {
