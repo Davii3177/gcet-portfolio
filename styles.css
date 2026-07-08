@@ -219,6 +219,70 @@ section h2 {
   font-weight: 500;
 }
 
+/* Journal */
+
+.section-intro {
+  color: var(--color-text-muted);
+  max-width: 680px;
+  margin: -12px 0 32px;
+}
+
+.journal-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.journal-entry {
+  border-left: 3px solid var(--color-border);
+  padding-left: 20px;
+}
+
+.journal-date {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.journal-entry h3 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+.journal-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.journal-photos img {
+  width: 220px;
+  max-width: 100%;
+  height: 165px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.journal-photos-small img {
+  width: 96px;
+  height: 96px;
+}
+
+.journal-list {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  color: var(--color-text-muted);
+}
+
+.journal-notes {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
 /* Projects */
 
 .project-grid {
