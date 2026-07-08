@@ -356,6 +356,20 @@ a:hover {
   z-index: 1;
 }
 
+.hero-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(46vw, 460px);
+  height: auto;
+  transform: translate(-50%, -50%);
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  clip-path: circle(50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
