@@ -4,6 +4,7 @@
 
 A modern, minimalist portfolio website showcasing projects and skills built during Carnegie Mellon's Global Communication & Education Technology Summer School.
 
+portfolio link https://davii3177.github.io/gcet-portfolio/
 ### Features
 
 - 🎨 **Clean, Minimalist Design** - Modern aesthetic with smooth interactions
@@ -60,5 +61,5 @@ For styling changes, edit `styles.css`.
 🔗 **GitHub:** [@Davii3177](https://github.com/Davii3177)
 
 ---
-portfolio link https://davii3177.github.io/gcet-portfolio/
+
 **Built with ❤️ for CMU GCET Summer School**
