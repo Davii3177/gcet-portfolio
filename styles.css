@@ -47,20 +47,37 @@
 }
 
 .tartan-strip {
-  height: 10px;
+  height: 26px;
   flex-shrink: 0;
   background-color: #b0161f;
   background-image: repeating-linear-gradient(
       90deg,
-      #f5f5f0 0,
-      #f5f5f0 1px,
-      transparent 1px,
-      transparent 24px
+      #f5f5f0 0px, #f5f5f0 3px,
+      transparent 3px, transparent 48px
     ),
-    repeating-linear-gradient(90deg, transparent 0 7px, #e8b923 7px, #e8b923 8px, transparent 8px 24px),
-    repeating-linear-gradient(90deg, transparent 0 13px, #1c3f7c 13px, #1c3f7c 14px, transparent 14px 24px),
-    repeating-linear-gradient(90deg, transparent 0 17px, #000 17px, #000 19px, transparent 19px 24px),
-    repeating-linear-gradient(90deg, #000 0, #000 4px, transparent 4px, transparent 24px);
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px, transparent 14px,
+      #e8b923 14px, #e8b923 18px,
+      transparent 18px, transparent 48px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px, transparent 24px,
+      #1c3f7c 24px, #1c3f7c 28px,
+      transparent 28px, transparent 48px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px, transparent 34px,
+      #000 34px, #000 40px,
+      transparent 40px, transparent 48px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #000 0px, #000 8px,
+      transparent 8px, transparent 48px
+    );
 }
 
 * {
