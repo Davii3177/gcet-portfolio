@@ -98,6 +98,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const sidebarHide = document.getElementById("sidebar-hide");
+  const sidebarShow = document.getElementById("sidebar-show");
+
+  const setSidebarHidden = (hidden) => {
+    document.body.classList.toggle("sidebar-hidden", hidden);
+    try {
+      localStorage.setItem("sidebarHidden", hidden ? "1" : "0");
+    } catch (e) {}
+  };
+
+  if (sidebarHide) {
+    sidebarHide.addEventListener("click", () => setSidebarHidden(true));
+  }
+  if (sidebarShow) {
+    sidebarShow.addEventListener("click", () => setSidebarHidden(false));
+  }
+  try {
+    if (localStorage.getItem("sidebarHidden") === "1") {
+      setSidebarHidden(true);
+    }
+  } catch (e) {}
+
+  const backToTop = document.getElementById("back-to-top");
+  if (backToTop) {
+    window.addEventListener(
+      "scroll",
+      () => {
+        backToTop.classList.toggle("is-visible", window.scrollY > 400);
+      },
+      { passive: true }
+    );
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   if (!("IntersectionObserver" in window)) {
     return;
   }
