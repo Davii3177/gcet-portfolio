@@ -235,11 +235,70 @@ a:hover {
   object-fit: cover;
   border-radius: 50%;
   z-index: 50;
-  pointer-events: none;
+  cursor: pointer;
   background-color: #fff;
   box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.4);
   border: 3px solid var(--color-primary);
-  transition: transform 0.15s ease-out;
+  transition: transform 0.15s ease-out, box-shadow 0.2s ease;
+}
+
+.scotty-mascot:hover {
+  box-shadow: 0 14px 26px -6px rgba(0, 0, 0, 0.5);
+}
+
+.scotty-mascot:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@keyframes scotty-bark-bounce {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  20% {
+    transform: scale(1.18, 0.82) rotate(-8deg);
+  }
+  40% {
+    transform: scale(0.88, 1.14) rotate(6deg);
+  }
+  60% {
+    transform: scale(1.1, 0.9) rotate(-4deg);
+  }
+  80% {
+    transform: scale(0.96, 1.04) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.scotty-mascot.is-barking {
+  animation: scotty-bark-bounce 0.5s ease;
+}
+
+.scotty-bubble {
+  position: fixed;
+  bottom: 158px;
+  right: 24px;
+  z-index: 51;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 2px solid var(--color-primary);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: scale(0.5) translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.scotty-bubble.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
 }
 
 @media (max-width: 640px) {
@@ -248,6 +307,11 @@ a:hover {
     height: 80px;
     bottom: 12px;
     right: 12px;
+  }
+
+  .scotty-bubble {
+    bottom: 100px;
+    right: 16px;
   }
 
   .layout {

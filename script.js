@@ -43,6 +43,59 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { passive: true }
     );
+
+    const bubble = document.getElementById("scotty-bubble");
+    let bubbleTimer;
+    let audioCtx;
+
+    const playBark = () => {
+      try {
+        const Ctx = window.AudioContext || window.webkitAudioContext;
+        if (!Ctx) return;
+        audioCtx = audioCtx || new Ctx();
+        const now = audioCtx.currentTime;
+
+        [0, 0.16].forEach((offset) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sawtooth";
+          osc.frequency.setValueAtTime(320, now + offset);
+          osc.frequency.exponentialRampToValueAtTime(90, now + offset + 0.11);
+          gain.gain.setValueAtTime(0.0001, now + offset);
+          gain.gain.exponentialRampToValueAtTime(0.28, now + offset + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + offset + 0.13);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now + offset);
+          osc.stop(now + offset + 0.15);
+        });
+      } catch (e) {}
+    };
+
+    const bark = () => {
+      playBark();
+
+      scotty.classList.remove("is-barking");
+      // eslint-disable-next-line no-unused-expressions
+      scotty.offsetWidth;
+      scotty.classList.add("is-barking");
+
+      if (bubble) {
+        bubble.classList.add("is-visible");
+        clearTimeout(bubbleTimer);
+        bubbleTimer = setTimeout(() => {
+          bubble.classList.remove("is-visible");
+        }, 900);
+      }
+    };
+
+    scotty.addEventListener("click", bark);
+    scotty.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        bark();
+      }
+    });
   }
 
   if (!("IntersectionObserver" in window)) {
