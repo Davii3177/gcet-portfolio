@@ -193,12 +193,17 @@ section h2 {
 
 .about p {
   color: var(--color-text-muted);
-  max-width: 680px;
+  max-width: 720px;
+  margin: 0 0 16px;
 }
 
 .about h3 {
   margin-top: 32px;
   font-size: 1.1rem;
+}
+
+.about-subhead {
+  margin-top: 0 !important;
 }
 
 .skills {
