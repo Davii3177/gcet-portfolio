@@ -5,7 +5,7 @@
   --color-text-muted: #56565f;
   --color-primary: #c41230;
   --color-primary-dark: #8f0e24;
-  --color-border: #e4e4e9;
+  --color-border: #ecdde0;
   --max-width: 960px;
   --radius: 10px;
   --font-serif: "Times New Roman", Times, Georgia, serif;
@@ -19,7 +19,7 @@
     --color-text-muted: #b3b3bd;
     --color-primary: #f2496b;
     --color-primary-dark: #f7728c;
-    --color-border: #2a2a33;
+    --color-border: #332428;
   }
 }
 
@@ -33,7 +33,7 @@
   --color-text-muted: #56565f;
   --color-primary: #c41230;
   --color-primary-dark: #8f0e24;
-  --color-border: #e4e4e9;
+  --color-border: #ecdde0;
 }
 
 :root[data-theme="dark"] {
@@ -43,7 +43,7 @@
   --color-text-muted: #b3b3bd;
   --color-primary: #f2496b;
   --color-primary-dark: #f7728c;
-  --color-border: #2a2a33;
+  --color-border: #332428;
 }
 
 .tartan-strip {
