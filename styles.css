@@ -49,28 +49,18 @@
 .tartan-strip {
   height: 10px;
   flex-shrink: 0;
-  background-color: var(--color-primary);
+  background-color: #b0161f;
   background-image: repeating-linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.55) 0px,
-      rgba(0, 0, 0, 0.55) 2px,
-      transparent 2px,
-      transparent 16px
+      #f5f5f0 0,
+      #f5f5f0 1px,
+      transparent 1px,
+      transparent 24px
     ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.45) 0px,
-      rgba(255, 255, 255, 0.45) 2px,
-      transparent 2px,
-      transparent 16px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.25) 8px,
-      rgba(0, 0, 0, 0.25) 9px,
-      transparent 9px,
-      transparent 16px
-    );
+    repeating-linear-gradient(90deg, transparent 0 7px, #e8b923 7px, #e8b923 8px, transparent 8px 24px),
+    repeating-linear-gradient(90deg, transparent 0 13px, #1c3f7c 13px, #1c3f7c 14px, transparent 14px 24px),
+    repeating-linear-gradient(90deg, transparent 0 17px, #000 17px, #000 19px, transparent 19px 24px),
+    repeating-linear-gradient(90deg, #000 0, #000 4px, transparent 4px, transparent 24px);
 }
 
 * {
