@@ -243,9 +243,10 @@ body.sidebar-hidden .sidebar-show-btn {
 }
 
 .logo {
-  font-family: var(--font-serif);
+  font-family: "Source Serif Pro", var(--font-serif);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.25;
   color: var(--color-text);
   padding: 0 12px;
 }
