@@ -271,7 +271,30 @@ a:hover {
   transform: translate(-50%, -50%) scale(0.4) rotate(90deg);
 }
 
+.scotty-mascot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 50;
+  pointer-events: none;
+  background-color: #fff;
+  box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.4);
+  border: 3px solid var(--color-primary);
+  transition: transform 0.15s ease-out;
+}
+
 @media (max-width: 640px) {
+  .scotty-mascot {
+    width: 80px;
+    height: 80px;
+    bottom: 12px;
+    right: 12px;
+  }
+
   .layout {
     flex-direction: column;
     min-height: 0;
