@@ -2,23 +2,27 @@
 
 ## CMU GCET Summer School 2026
 
-A modern, minimalist portfolio website showcasing projects and skills built during Carnegie Mellon's Global Communication & Education Technology Summer School.
+A CMU-themed portfolio site built during Carnegie Mellon's Global Communication & Education Technology Summer School — dashboard-style sidebar layout, dark/light mode, and a day-by-day program journal.
 
-portfolio link https://davii3177.github.io/gcet-portfolio/
+**Live site:** https://davii3177.github.io/gcet-portfolio/
+
 ### Features
 
-- 🎨 **Clean, Minimalist Design** - Modern aesthetic with smooth interactions
-- 📱 **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
-- ⚡ **Fast & Lightweight** - Pure HTML and CSS, no heavy dependencies
-- 🏷️ **SEO Optimized** - Proper semantic HTML structure
-- ♿ **Accessible** - Built with accessibility best practices
+- 🏛️ **Dashboard Layout** - Fixed left sidebar navigation that collapses on demand, with a bigger main content column
+- 🌗 **Light/Dark Toggle** - Manual theme switch (persisted via localStorage), falls back to system preference
+- 📓 **Summer School Journal** - Day-by-day log of GCET topics and photos
+- 🐶 **Scotty Mascot** - Clickable mascot badge with a synthesized bark and cute bounce animation
+- 🎨 **CMU Branding** - Carnegie Red accents, Source Serif Pro wordmark, tartan pattern strip, and the official CMU seal as a hero watermark
+- 📱 **Fully Responsive** - Sidebar collapses to a top bar on narrow screens
+- ♿ **Accessible** - Keyboard-navigable interactive elements, `prefers-reduced-motion` support, semantic HTML
 
 ### Sections
 
-1. **Home** - Hero section with call-to-action buttons
-2. **About** - Bio, background, and skills showcase
-3. **Projects** - Portfolio of work and achievements
-4. **Contact** - Easy ways to get in touch
+1. **Home** - Hero with the CMU seal watermark and tartan-strip branding
+2. **About** - Bio, background, and skills
+3. **Journal** - Day-by-day GCET program log with photos
+4. **Projects** - BrainGuard AI, a Strava/Coros running analyzer, and a To-Do App
+5. **Contact** - Email and GitHub
 
 ### Getting Started
 
@@ -35,24 +39,11 @@ portfolio link https://davii3177.github.io/gcet-portfolio/
    - Select `main` branch as the source
    - Your site will be available at `https://Davii3177.github.io/gcet-portfolio`
 
-### Customization
-
-Edit the following sections in `index.html` to personalize:
-
-- **Name & Title** - Update hero section
-- **Bio** - Modify About section
-- **Skills** - Add/remove skill tags
-- **Projects** - Update project cards with your work
-- **Contact** - Add your email, GitHub, LinkedIn, etc.
-
-For styling changes, edit `styles.css`.
-
 ### Technologies
 
-- HTML5
-- CSS3
-- Responsive Design
-- CSS Grid & Flexbox
+- HTML5, CSS3 (custom properties, CSS-generated tartan pattern)
+- Vanilla JavaScript (theme toggle, scroll reveal, mascot interaction, dashboard collapse)
+- Google Fonts (Source Serif Pro)
 
 ### Contact
 
