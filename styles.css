@@ -49,9 +49,9 @@
 .tartan-strip {
   height: 52px;
   flex-shrink: 0;
-  background-color: #b0161f;
-  background-image: url("images/tartan.jpg");
-  background-size: 220px auto;
+  background-color: #14203a;
+  background-image: url("images/tartan.png");
+  background-size: 180px auto;
   background-repeat: repeat;
 }
 
