@@ -360,7 +360,7 @@ a:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(46vw, 460px);
+  width: min(58vw, 580px);
   height: auto;
   transform: translate(-50%, -50%);
   opacity: 0.22;
