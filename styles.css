@@ -538,6 +538,11 @@ body.sidebar-hidden .sidebar-show-btn {
   z-index: 0;
 }
 
+:root[data-theme="dark"] .hero-badge {
+  opacity: 0.18;
+  mix-blend-mode: normal;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
