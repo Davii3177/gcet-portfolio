@@ -156,4 +156,23 @@ document.addEventListener("DOMContentLoaded", () => {
     section.classList.add("reveal-section");
     observer.observe(section);
   });
+
+  const journalEntries = document.querySelectorAll(".journal-entry");
+  const entryObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          entryObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  journalEntries.forEach((entry, index) => {
+    entry.classList.add("reveal-item");
+    entry.style.transitionDelay = (index % 4) * 0.08 + "s";
+    entryObserver.observe(entry);
+  });
 });
