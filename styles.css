@@ -1191,11 +1191,22 @@ section h2 {
   z-index: 202;
   width: 110px;
   height: 110px;
-  transform: translate(-50%, -50%) scale(1);
+  padding: 0;
+  border: none;
   border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  transform: translate(-50%, -50%) scale(1);
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.08);
   opacity: 1;
-  transition: opacity 0.5s ease, transform 0.6s ease;
+  transition: opacity 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-mark:hover,
+.intro-mark:focus-visible {
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.16);
+  outline: none;
 }
 
 .intro-mark img {
@@ -1203,6 +1214,22 @@ section h2 {
   height: 100%;
   border-radius: 50%;
   display: block;
+  pointer-events: none;
+}
+
+.intro-hint {
+  position: fixed;
+  top: calc(50% + 78px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 202;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: opacity 0.4s ease;
 }
 
 .intro-overlay.is-hidden .intro-mark {
@@ -1210,8 +1237,6 @@ section h2 {
   transform: translate(-50%, -50%) scale(0.6);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .intro-overlay {
-    display: none;
-  }
+.intro-overlay.is-hidden .intro-hint {
+  opacity: 0;
 }

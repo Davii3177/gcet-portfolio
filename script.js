@@ -1,43 +1,16 @@
-function runIntro() {
-  const introOverlay = document.getElementById("intro-overlay");
-  if (!introOverlay) return;
-
-  const prefersReducedMotion =
-    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (prefersReducedMotion) {
-    introOverlay.classList.add("is-hidden");
-    return;
-  }
-
-  introOverlay.classList.remove("is-hidden");
-  // Force a reflow so re-adding "is-hidden" right after always restarts the
-  // transition, even if the overlay was just reset.
-  // eslint-disable-next-line no-unused-expressions
-  introOverlay.offsetWidth;
-
-  setTimeout(() => {
-    introOverlay.classList.add("is-hidden");
-  }, 500);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  runIntro();
+  const introOverlay = document.getElementById("intro-overlay");
+  const introMark = document.getElementById("intro-mark");
 
-  const heroBadge = document.querySelector(".hero-badge");
-  if (heroBadge) {
-    heroBadge.style.pointerEvents = "auto";
-    heroBadge.style.cursor = "pointer";
-    heroBadge.setAttribute("role", "button");
-    heroBadge.setAttribute("tabindex", "0");
-    heroBadge.setAttribute("aria-label", "Replay intro animation");
-    heroBadge.addEventListener("click", runIntro);
-    heroBadge.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        runIntro();
-      }
-    });
+  if (introOverlay && introMark) {
+    introOverlay.setAttribute("aria-hidden", "false");
+
+    const openGate = () => {
+      introOverlay.classList.add("is-hidden");
+      introOverlay.setAttribute("aria-hidden", "true");
+    };
+
+    introMark.addEventListener("click", openGate);
   }
 
   const themeToggle = document.getElementById("theme-toggle");
