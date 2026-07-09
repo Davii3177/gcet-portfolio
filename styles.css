@@ -776,12 +776,32 @@ section h2 {
 /* Projects */
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
   gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-snap-type: x proximity;
+  scrollbar-color: var(--color-primary) var(--color-bg-alt);
+  scrollbar-width: thin;
+}
+
+.project-grid::-webkit-scrollbar {
+  height: 10px;
+}
+
+.project-grid::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+  border-radius: 999px;
+}
+
+.project-grid::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 999px;
 }
 
 .project-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
   background-color: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
