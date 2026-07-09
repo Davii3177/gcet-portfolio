@@ -20,8 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const scottyWrapper = document.getElementById("scotty-wrapper");
   const scotty = document.getElementById("scotty");
-  if (scotty) {
+  const scottyClose = document.getElementById("scotty-close");
+  const scottyShow = document.getElementById("scotty-show");
+
+  if (scottyWrapper && scotty) {
     let lastScrollY = window.scrollY;
     let scottyResetTimer;
 
@@ -89,13 +93,107 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    scotty.addEventListener("click", bark);
-    scotty.addEventListener("keydown", (event) => {
+    // Dragging: track pointer movement on the wrapper; a genuine click (no
+    // movement past the threshold) triggers a bark instead of a reposition.
+    let dragging = false;
+    let moved = false;
+    let startX = 0;
+    let startY = 0;
+    let startLeft = 0;
+    let startTop = 0;
+
+    const clampPosition = (left, top) => {
+      const maxLeft = window.innerWidth - scottyWrapper.offsetWidth;
+      const maxTop = window.innerHeight - scottyWrapper.offsetHeight;
+      return {
+        left: Math.max(0, Math.min(maxLeft, left)),
+        top: Math.max(0, Math.min(maxTop, top)),
+      };
+    };
+
+    const applyPosition = (left, top) => {
+      scottyWrapper.style.left = left + "px";
+      scottyWrapper.style.top = top + "px";
+      scottyWrapper.style.right = "auto";
+      scottyWrapper.style.bottom = "auto";
+    };
+
+    try {
+      const savedPos = JSON.parse(localStorage.getItem("scottyPos") || "null");
+      if (savedPos && typeof savedPos.left === "number" && typeof savedPos.top === "number") {
+        const clamped = clampPosition(savedPos.left, savedPos.top);
+        applyPosition(clamped.left, clamped.top);
+      }
+    } catch (e) {}
+
+    scottyWrapper.addEventListener("pointerdown", (event) => {
+      if (event.target === scottyClose || (scottyClose && scottyClose.contains(event.target))) {
+        return;
+      }
+      dragging = true;
+      moved = false;
+      const rect = scottyWrapper.getBoundingClientRect();
+      startX = event.clientX;
+      startY = event.clientY;
+      startLeft = rect.left;
+      startTop = rect.top;
+      scottyWrapper.setPointerCapture(event.pointerId);
+    });
+
+    scottyWrapper.addEventListener("pointermove", (event) => {
+      if (!dragging) return;
+      const dx = event.clientX - startX;
+      const dy = event.clientY - startY;
+      if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+        moved = true;
+      }
+      if (!moved) return;
+      const clamped = clampPosition(startLeft + dx, startTop + dy);
+      applyPosition(clamped.left, clamped.top);
+    });
+
+    scottyWrapper.addEventListener("pointerup", (event) => {
+      if (!dragging) return;
+      dragging = false;
+      if (moved) {
+        const rect = scottyWrapper.getBoundingClientRect();
+        try {
+          localStorage.setItem("scottyPos", JSON.stringify({ left: rect.left, top: rect.top }));
+        } catch (e) {}
+      } else if (event.target !== scottyClose && !(scottyClose && scottyClose.contains(event.target))) {
+        bark();
+      }
+    });
+
+    scottyWrapper.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         bark();
       }
     });
+
+    const setScottyHidden = (hidden) => {
+      scottyWrapper.classList.toggle("is-hidden", hidden);
+      if (scottyShow) {
+        scottyShow.classList.toggle("is-visible", hidden);
+      }
+      try {
+        localStorage.setItem("scottyHidden", hidden ? "1" : "0");
+      } catch (e) {}
+    };
+
+    if (scottyClose) {
+      scottyClose.addEventListener("click", () => setScottyHidden(true));
+      scottyClose.addEventListener("pointerdown", (event) => event.stopPropagation());
+    }
+    if (scottyShow) {
+      scottyShow.addEventListener("click", () => setScottyHidden(false));
+    }
+    try {
+      if (localStorage.getItem("scottyHidden") === "1") {
+        setScottyHidden(true);
+      }
+    } catch (e) {}
   }
 
   const sidebarHide = document.getElementById("sidebar-hide");

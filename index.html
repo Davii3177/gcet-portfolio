@@ -292,16 +292,22 @@
     </div>
   </div>
 
-  <img
-    src="images/scotty.webp"
-    id="scotty"
-    class="scotty-mascot"
-    alt="Scotty the mascot"
-    role="button"
-    tabindex="0"
-    aria-label="Pet Scotty"
-  />
-  <span id="scotty-bubble" class="scotty-bubble" aria-hidden="true">Woof!</span>
+  <div id="scotty-wrapper" class="scotty-wrapper" role="button" tabindex="0" aria-label="Pet Scotty (drag to move)">
+    <img src="images/scotty.webp" id="scotty" class="scotty-mascot" alt="" />
+    <button id="scotty-close" class="scotty-close" type="button" aria-label="Hide Scotty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12" />
+      </svg>
+    </button>
+    <span id="scotty-bubble" class="scotty-bubble" aria-hidden="true">Woof!</span>
+  </div>
+
+  <button id="scotty-show" class="scotty-show-btn" type="button" aria-label="Show Scotty">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9 10h.01M15 10h.01M8.5 15c1 .8 2.2 1.2 3.5 1.2s2.5-.4 3.5-1.2" />
+    </svg>
+  </button>
 
   <button id="sidebar-show" class="sidebar-show-btn" type="button" aria-label="Show dashboard">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
