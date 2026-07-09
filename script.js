@@ -274,10 +274,12 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebarShow.addEventListener("click", () => setSidebarHidden(false));
   }
   try {
-    if (localStorage.getItem("sidebarHidden") === "1") {
-      setSidebarHidden(true);
-    }
-  } catch (e) {}
+    // Dashboard starts hidden by default; only stays visible if the user
+    // has explicitly shown it before (stored as "0").
+    setSidebarHidden(localStorage.getItem("sidebarHidden") !== "0");
+  } catch (e) {
+    setSidebarHidden(true);
+  }
 
   const backToTop = document.getElementById("back-to-top");
   if (backToTop) {
