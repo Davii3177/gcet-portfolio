@@ -242,17 +242,32 @@ body.sidebar-hidden .sidebar-show-btn {
   box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.35);
 }
 
+.logo-block {
+  padding: 0 12px;
+  min-width: 0;
+}
+
 .logo {
+  display: block;
   font-family: "Source Serif Pro", var(--font-serif);
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.25;
   color: var(--color-text);
-  padding: 0 12px;
+  padding: 0;
 }
 
 .logo:hover {
   text-decoration: none;
+}
+
+.logo-subtitle {
+  margin: 2px 0 0;
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: var(--color-primary);
 }
 
 .sidebar nav {
