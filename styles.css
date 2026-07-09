@@ -870,6 +870,8 @@ section h2 {
   display: flex;
   gap: 24px;
   overflow-x: auto;
+  margin-top: 12px;
+  padding-top: 12px;
   padding-bottom: 20px;
   scroll-snap-type: x proximity;
   scrollbar-color: var(--color-primary) var(--color-bg-alt);
