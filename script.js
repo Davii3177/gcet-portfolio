@@ -287,10 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
+        entry.target.classList.toggle("is-visible", entry.isIntersecting);
       });
     },
     { threshold: 0.12 }
@@ -305,10 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const entryObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          entryObserver.unobserve(entry.target);
-        }
+        entry.target.classList.toggle("is-visible", entry.isIntersecting);
       });
     },
     { threshold: 0.15 }
