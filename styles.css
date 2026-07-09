@@ -204,9 +204,9 @@ body.sidebar-hidden .sidebar-show-btn {
 
 .sidebar-top {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 16px;
 }
 
 .sidebar-top-actions {
@@ -595,6 +595,9 @@ body.sidebar-hidden .sidebar-show-btn {
 
   .sidebar-top {
     flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .sidebar nav {
