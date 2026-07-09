@@ -1,4 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const introOverlay = document.getElementById("intro-overlay");
+  if (introOverlay) {
+    const prefersReducedMotion =
+      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      introOverlay.remove();
+    } else {
+      setTimeout(() => {
+        introOverlay.classList.add("is-hidden");
+        setTimeout(() => introOverlay.remove(), 1000);
+      }, 500);
+    }
+  }
+
   const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
     const labelFor = (theme) =>
