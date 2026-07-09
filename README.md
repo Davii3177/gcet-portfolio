@@ -2,7 +2,7 @@
 
 ## CMU GCET Summer School 2026
 
-A CMU-themed portfolio site built during Carnegie Mellon's Global Communication & Education Technology Summer School — dashboard-style sidebar layout, dark/light mode, and a day-by-day program journal.
+A CMU-themed portfolio site built during Carnegie Mellon's Global Cultures and Emerging Technology Summer School — dashboard-style sidebar layout, dark/light mode, and a day-by-day program journal.
 
 **Live site:** https://davii3177.github.io/gcet-portfolio/
 
@@ -43,7 +43,7 @@ A CMU-themed portfolio site built during Carnegie Mellon's Global Communication 
 
 - HTML5, CSS3 (custom properties, CSS-generated tartan pattern)
 - Vanilla JavaScript (theme toggle, scroll reveal, mascot interaction, dashboard collapse)
-- Google Fonts (Source Serif Pro)
+- Google Fonts (Source Serif Pro, Playfair Display, Dancing Script)
 
 ### Contact
 
