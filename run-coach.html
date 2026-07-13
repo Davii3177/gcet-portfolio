@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Try the Strava & Coros Running Analyzer, a tool that reads your running data and builds personalized workouts." />
+  <title>Try the Running Analyzer | David Chen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="run-coach.css" />
+</head>
+<body>
+  <main>
+    <nav class="topbar" aria-label="Page navigation">
+      <a class="wordmark" href="index.html">David Chen <span>/ GCET 2026</span></a>
+      <a class="back-link" href="index.html#projects">&larr; Back to projects</a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Performance Analytics</p>
+        <h1>Read your runs. Train <em>smarter.</em></h1>
+        <p class="lede">The Strava &amp; Coros Running Analyzer pulls in your training data, surfaces the trends behind your performance, and turns them into a workout built for your next step forward.</p>
+        <div class="actions">
+          <a class="launch-button" href="https://strava-coros-data-reading.onrender.com/" target="_blank" rel="noopener noreferrer">
+            Try the Analyzer <span aria-hidden="true">&nearr;</span>
+          </a>
+          <p class="launch-note">Opens the interactive app in a new tab</p>
+        </div>
+      </div>
+
+      <div class="signal-card" aria-label="Running analysis illustration">
+        <div class="card-header"><span class="status-dot"></span> Training workspace <span class="secure">Synced</span></div>
+        <div class="card-body">
+          <div class="chart" aria-hidden="true">
+            <span style="height:44%"></span>
+            <span style="height:66%"></span>
+            <span style="height:38%"></span>
+            <span style="height:72%"></span>
+            <span style="height:54%"></span>
+            <span style="height:30%"></span>
+            <span class="peak" style="height:88%"></span>
+          </div>
+          <div class="chart-days" aria-hidden="true"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+          <p class="model-label">Weekly volume</p>
+          <p class="model-status">42.6 km <b>this week</b></p>
+          <div class="meter" aria-hidden="true"><span></span></div>
+          <div class="data-row"><span>Performance trend</span><b>Improving</b></div>
+          <div class="data-row"><span>Next workout</span><b>Generated</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works" aria-labelledby="how-title">
+      <div>
+        <p class="eyebrow"><span></span> A simple workflow</p>
+        <h2 id="how-title">From your data to your next session.</h2>
+      </div>
+      <ol class="steps">
+        <li><span>01</span><h3>Connect your data</h3><p>Link your Strava and Coros accounts to pull in your recent runs.</p></li>
+        <li><span>02</span><h3>Analyze the trends</h3><p>The analyzer reads your pace, distance, and load to reveal how your training is progressing.</p></li>
+        <li><span>03</span><h3>Get your workout</h3><p>Receive a personalized session generated from your results&mdash;ready to run.</p></li>
+      </ol>
+    </section>
+
+    <aside class="notice" aria-label="Important notice">
+      <strong>Bring your own data.</strong>
+      <span>A student project built to explore training data&mdash;connect your personal Strava and Coros accounts to see it work on your own runs.</span>
+    </aside>
+  </main>
+
+  <footer>
+    <span>Strava &amp; Coros Running Analyzer</span>
+    <a href="https://strava-coros-data-reading.onrender.com/" target="_blank" rel="noopener noreferrer">Launch app &nearr;</a>
+  </footer>
+</body>
+</html>
